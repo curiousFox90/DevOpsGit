@@ -1,0 +1,116 @@
+<template>
+	<form>
+
+		<lightning-card title="Search for customers" icon-name="standard:search" >
+		
+				<!-- <lightning-icon icon-name="utility:info" alternative-text="info" title="info"
+					class="slds-icon_large slds-float_right"></lightning-icon> -->
+			  
+			<!-- </br> -->
+			<div class="slds-grid slds-grid_vertical">
+			<div class="slds-p-bottom_large slds-p-left_large">
+
+				<lightning-input type="text" label="First Name" id="fName" name="fName"
+					onchange={firstNameValue} value={fName} class="slds-p-around_x-small " ></lightning-input>
+				<lightning-input type="text" label="Middle Name" id="mName" name="mName"
+					onchange={middleNameValue} value={mName} class="slds-p-around_x-small" ></lightning-input>
+				<lightning-input type="text" label="Last Name" id="lName" name="lName" onchange={lastNameValue}
+					value={lName} class="slds-p-around_x-small" >
+				</lightning-input>
+
+
+<div class="slds-grid slds-gutters">
+							<div class="slds-col">
+							<span>
+								<lightning-input type="number" label="PostalCode"
+							field-level-help="Please enter postcode atleast 6digits" id="pCode" name="pCode"
+							onchange={postalCodeValue} class="slds-p-around_x-small" value={pCode}></lightning-input>
+							</span>
+							</div>
+							<div class="slds-col">
+							<span>
+								<lightning-input type="date" label="Date of Birth"
+							field-level-help="Please enter MMDDYYYY Format" id="bDate" name="bDate"
+							value={bdate} onchange={dateOfBirthValue} class="slds-p-around_x-small"  >
+						</lightning-input>
+							</span>
+							</div>
+							
+
+						
+
+
+
+				<lightning-input type="phone" label="Phone" field-level-help="Minimum 10digits required" name="phone"
+					onchange={phoneValue} id="phone" value={phone} class="slds-p-around_x-small" >
+				</lightning-input>
+
+				
+				<!-- <footer role="contentinfo" class="slds-p-around_large"> -->
+					
+					
+						
+						<lightning-card>
+						<lightning-button label="Search" variant="destructive" 
+							onclick={handleSearch}   >
+						</lightning-button>
+						<lightning-button label="Reset " variant="destructive" 
+							onclick={handleReset} >
+						</lightning-button>
+					</lightning-card>
+					
+					
+				
+				<!-- </footer> -->
+</div>
+</div>
+			</div>
+			
+		</lightning-card>
+
+
+	</form>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <label class="slds-form-element__label" >Post Code</label> -->
+<!-- <lightning-helptext content="Please enter postcode" class="customIcon"></lightning-helptext> -->
+<!-- <lightning-card>
+	<lightning-button class="slds-m-around_small" label='Clear' variant='Destructive' >
+	</lightning-button>
+	<lightning-button class="slds-m-around_small" label='Search' variant='Destructive' >
+	</lightning-button>
+</lightning-card> -->
+
+<!-- <div>
+							Some text here
+							<lightning-helptext content="I am incorrectly aligned"></lightning-helptext>
+						</div> -->
+<!--   <fieldset class="slds-form-element slds-form-element_compound">           
+				 <div class="slds-form-element__control">         
+					 <div class="slds-form-element__row">           
+						 <div class="slds-size_2-of-6">              
+							<div class="slds-form-element">               
+								 <label class="slds-form-element__label" for="input-01">Post Code</label> 
+								               <div class="slds-form-element__control">                 
+									 <input type="text" id="input-01" class="slds-input" />              
+								  </div>              </div>            </div>           
+								 <div class="slds-size_2-of-6">             
+									 <div class="slds-form-element">              
+										  <label class="slds-form-element__label" for="input-02">Birth Date</label> 
+										               <div class="slds-form-element__control">         
+											         <input type="text" id="input-02" class="slds-input" />   
+										             </div>              </div>            </div>          </div> 
+									       </div>      </fieldset>
+			 -->

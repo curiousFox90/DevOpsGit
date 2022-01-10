@@ -1,0 +1,70 @@
+<template>
+    <form>
+		<div class="slds-card">
+		<lightning-card title="Search for customers" icon-name="standard:search">
+			<div class="slds-p-bottom_large slds-p-left_large">
+
+				<lightning-input type="text" label="First Name" id="fName" name="fName" onchange={firstNameValue}
+					value={fName} class="slds-p-around_x-small fName-searchbox" style="margin-right:24px">
+				</lightning-input>
+				
+				<lightning-input type="text" label="Last Name" id="lName" name="lName" onchange={lastNameValue}
+					value={lName} class="slds-p-around_x-small lName-searchbox" style="margin-right:24px">
+				</lightning-input>
+				<lightning-input type="text" label="Email" id="email" name="email" onchange={emailValue}
+					value={email} class="slds-p-around_x-small email-searchbox" style="margin-right:24px">
+				</lightning-input>
+				
+
+				<div class="slds-grid slds-gutters">
+					<div class="slds-col">
+						<span>
+							<lightning-input type="number" label="PostalCode"
+								field-level-help="Please enter postcode atleast 6digits" id="pCode" name="pCode"
+								onchange={postalCodeValue} class="slds-p-around_x-small pCode-searchbox" value={pCode}>
+							</lightning-input>
+						</span>
+					</div>
+					<div class="slds-col">
+						<span>
+							<lightning-input type="date" label="Date of Birth"
+								field-level-help="Please enter MMDDYYYY Format" id="bDate" name="bDate" value={bdate}
+								onchange={dateOfBirthValue} class="slds-p-around_x-small bDate-searchbox"
+								style="margin-right:24px">
+							</lightning-input>
+						</span>
+					</div>
+				</div>
+
+
+
+
+
+				<lightning-input type="phone" label="Phone" field-level-help="Minimum 10digits required" name="phone"
+					onchange={phoneValue} id="phone" value={phone} class="slds-p-around_x-small phone-searchbox"
+					style="margin-right:24px">
+				</lightning-input>
+
+
+				<!-- <footer role="contentinfo" class="slds-p-around_large"> -->
+				<div class="slds-border_top">
+					<lightning-card>
+						<div class="slds-p-bottom_x-small">
+							<lightning-button label="Search" variant="destructive" style="margin-right:16px"
+								onclick={handleSearch} class="slds-float_right">
+							</lightning-button>
+							<lightning-button label="Reset " variant="destructive" style="margin-right:16px"
+								onclick={handleReset} class="slds-float_right">
+							</lightning-button>
+						</div>
+					</lightning-card>
+
+					<!-- </footer> -->
+				
+			</div>
+			</div>
+		</lightning-card>
+	</div>
+
+	</form>
+</template>

@@ -1,0 +1,48 @@
+<template>
+
+    <div class="slds-card">
+        <lightning-card title="List Of Contacts" class="slds-m-around_none" >
+        
+        <div class=",slds-box slds-theme--default">
+            <lightning-combobox name="filter"
+                                label="Status"
+                                value={selectedValue}
+                                variant="label-hidden"
+                                options={options}
+                                onchange={handleChange}
+                                placeholder="Choose Records"
+                                style="color:grey;"></lightning-combobox>
+        </div>
+
+        <lightning-layout vertical-align="center">
+
+            <div class="slds-scrollable_y" style="height:10rem;">
+                <div class="slds-text-longform">
+            <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column="true" 
+                show-row-number-column="true"
+                onrowaction={handleRowAction}
+
+                sorted-by={sortBy}
+                sorted-direction={sortDirection}
+                onsort={handleSortdata}
+               >
+
+               
+        </lightning-datatable>
+
+        <template if:false={isSearchResults}>
+            <p class="slds-var-m-left_small slds-text-heading_medium"  style="color: red; margin: 40px;"> 
+                        No data found  </p>        
+               
+           </template>  
+    </div>
+    </div>
+        </lightning-layout>
+    </lightning-card>
+</div>
+
+</template>

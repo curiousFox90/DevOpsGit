@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="search component">
+       
+          
+               
+                <template if:true={accFields.data}>
+                    
+                <template for:each={accFields.data} for:item="acc">
+                   
+                  
+                    
+
+                    <lightning-input name={acc.Field_Label__c} label={acc.Field_Label__c} type={acc.Data_Type__c} required={acc.Is_Required__c} class="slds-p-around_xx-small" key={acc.Id}></lightning-input>
+                    
+                </template>
+            
+                </template>
+            
+                <template if:true={accFields.error}>
+                    {accFields.error}
+                </template>
+          
+    </lightning-card>
+</template>

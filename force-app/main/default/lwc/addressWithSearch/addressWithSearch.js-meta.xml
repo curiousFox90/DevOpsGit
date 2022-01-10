@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+
+            <property name="serachAddressLabel" 
+            type="String" 
+            label="search Address Label"
+            description="serachAddressLabel"/>
+            
+            <property name="streetLabel" 
+            type="String" 
+            label="streetLabel"
+            description="streetLabel"/>
+
+            <property name="cityLabel" 
+            type="String" 
+            label="cityLabel"
+            description="cityLabel"/>
+
+            <property name="stateLabel" 
+            type="String" 
+            label="stateLabel"
+            description="stateLabel"/>
+
+            <property name="postalCodeLabel" 
+            type="String" 
+            label="postalCodeLabel"
+            description="postalCodeLabel"/>
+
+            <property name="countryLabel" 
+            type="String" 
+            label="countryLabel"
+            description="countryLabel"/>
+            
+            <property name="street" 
+            type="String" 
+            label="Street"
+            description="street"/>
+
+            <property name="city" 
+            type="String" 
+            label="city"
+            description="city"/>
+
+            <property name="state" 
+            type="String" 
+            label="state"
+            description="state"/>
+
+            <property name="postalCode" 
+            type="String" 
+            label="postalCode"
+            description="postalCode"/>
+
+            <property name="country" 
+            type="String" 
+            label="country"
+            description="country"/>
+
+        </targetConfig>
+       
+    </targetConfigs>
+</LightningComponentBundle>

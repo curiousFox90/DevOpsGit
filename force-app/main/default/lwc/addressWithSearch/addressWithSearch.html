@@ -1,0 +1,22 @@
+<template>
+    <!-- <lightning-card title="Address"> -->
+        <div class=""> <!--slds-p-around_medium-->
+            <lightning-input-address
+                address-label={serachAddressLabel}
+                street-label={streetLabel}
+                city-label={cityLabel}
+                country-label={countryLabel}
+                province-label={stateLabel}
+                postal-code-label={postalCodeLabel}           
+                street={street}
+                city={city}
+                country={country}
+                province={state}
+                postal-code={postalcode}
+                field-level-help="Select Billing Address" 
+                onchange={handleChange}
+                show-address-lookup>
+            </lightning-input-address>
+        </div>
+    <!--</lightning-card> -->
+</template>

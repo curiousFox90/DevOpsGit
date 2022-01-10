@@ -1,0 +1,66 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <template if:true={isActive}>
+  <form>
+  <lightning-card
+    variant="Narrow"
+    title={componentHeader}
+    icon-name="standard:search"
+  >
+    <div class="c-container">
+      <div class="slds-card">
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title">
+            <p>{listOfFields}</p>
+            
+          </h2>
+        </div>
+        <template for:each={fieldObject} for:item="object" for:index="index">
+          <template if:false={object.IsPicklist}>
+          <lightning-input
+            type={object.type}
+            data-index={index}
+            data-field-api-name={object.fieldPath}
+            key={object.fieldPath}
+            label={object.label}
+            required={object.dbRequired}
+            class="slds-m-around_medium"
+            value={searchKeywords}
+            name={index}
+            onchange={buttonValidator}
+            field-level-help={object.helpcontent}
+            
+          ></lightning-input>
+        </template>
+        </template>
+      </div>
+    </div>
+  </lightning-card>
+  
+  <lightning-card >
+    <div class="slds-p-bottom_large">
+      <template if:false={buttonDisabled}>
+    <lightning-button
+      class="slds-p-bottom_small slds-float_right slds-m-right_medium"
+      label="Clear"
+      variant="Destructive"
+      onclick={handleReset}
+      
+    >
+    </lightning-button>
+  </template>
+
+    <lightning-button
+      class="slds-p-bottom_small slds-float_right slds-m-right_medium"
+      label="Search"
+      variant="Destructive"
+      onclick={handleSearch}
+      disabled={buttonDisabled}
+    >
+    </lightning-button>
+  </div>
+  </lightning-card>
+  
+</form>
+</template>
+</template>

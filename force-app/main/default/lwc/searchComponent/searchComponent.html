@@ -1,0 +1,49 @@
+<template>
+    <lightning-card
+      variant="Narrow"
+      title="Search Contacts"
+      icon-name="standard:search"
+    >
+      <div class="c-container">
+        <div class="slds-card">
+          <div class="slds-media__body">
+            <h2 class="slds-card__header-title">
+              <p>{listOfFields}</p>
+              <!-- <span>{lblobjectName} Records ({recordCount})</span> -->
+            </h2>
+          </div>
+          <template for:each={fieldObject} for:item="object" for:index="index">
+            <lightning-input
+              type={object.type}
+              data-index={index}
+              data-field-api-name={object.fieldPath}
+              key={object.label}
+              label={object.label}
+              required={object.dbRequired}
+              class="slds-m-around_medium"
+              value={searchKeywords}
+              onchange={handleUserInput}
+            ></lightning-input>
+          </template>
+        </div>
+      </div>
+    </lightning-card>
+  
+    <lightning-card >
+      <lightning-button
+        class="slds-m-around_small"
+        label="Clear"
+        variant="Destructive"
+        onclick={handleResetAll}
+      >
+      </lightning-button>
+  
+      <lightning-button
+        class="slds-m-around_small"
+        label="Search"
+        variant="Destructive"
+        onclick={handleSearch}
+      >
+      </lightning-button>
+    </lightning-card>
+  </template>

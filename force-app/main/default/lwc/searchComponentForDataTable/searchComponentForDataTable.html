@@ -1,0 +1,39 @@
+<template>
+    <template if:true={isActive}>
+        <div class="slds-card">
+            <lightning-card title={cardTitle}>
+                <template if:true={displayPick}>
+                    <div class="slds-box slds-theme--default">
+
+                        <lightning-combobox name="filter" label="Status" value={selectedValue} variant="label-hidden"
+                            options={comboOptions} onchange={handleChange} placeholder="Choose Records"
+                            style="color:grey;width:150px;"></lightning-combobox>
+                    </div>
+                </template>
+                <lightning-layout vertical-align="center">
+
+                    <div class="slds-scrollable_y" style="height:10rem;">
+                        <div class="slds-text-longform">
+                            <lightning-datatable key-field="id" data={data} columns={columns}
+                                hide-checkbox-column="true" show-row-number-column="true" sorted-by={sortBy}
+                                sorted-direction={sortDirection} onsort={handleSortdata}>
+                            </lightning-datatable>
+                            <div if:true={loadingSpinner} class="slds-spinner_inline spinner-padding">
+                                <lightning-spinner variant="brand" alternative-text="Loading..." size="medium">
+                                </lightning-spinner>
+                            </div>
+                            <template if:false={isSearchResult}>
+                                <p class="slds-var-m-left_small slds-text-heading_medium"
+                                    style="color: red; margin: 40px;">{noDataMessage} </p>
+                            </template>
+                            <template if:false={isMoreData}>
+                                <p class="slds-var-m-left_small slds-text-heading_medium"
+                                    style="color: red; margin: 40px;">{isMoreDataMessage} </p>
+                            </template>
+                        </div>
+                    </div>
+                </lightning-layout>
+            </lightning-card>
+        </div>
+    </template>
+</template>

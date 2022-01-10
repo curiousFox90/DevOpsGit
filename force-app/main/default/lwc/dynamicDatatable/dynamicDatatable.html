@@ -1,0 +1,41 @@
+<template>    
+    <div class="c-container">
+        <div class="slds-card">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{lblobjectName} Records ({recordCount})</span>
+                </h2>
+            </div>
+
+            <div class=",slds-box slds-theme--default">
+                <lightning-combobox name="filter"
+                                    label="Status"
+                                    value={selectedValue}
+                                    variant="label-hidden"
+                                    options={options}
+                                    onchange={handleChange}
+                                    placeholder="Choose Records"
+                                    style="color:grey;width:150px;"></lightning-combobox>
+            </div>
+
+
+            <div class="slds-card__body">
+                <div class="slds-scrollable_y" style="height:10rem;">
+                <lightning-datatable 
+                    key-field="Id"
+                    data={tableData}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    show-row-number-column="true"
+
+                    
+                    sorted-by={sortBy}
+                    sorted-direction={sortDirection}
+                    onsort={handleSortdata}
+                    min-column-width=200>
+                </lightning-datatable> 
+            </div>
+            </div>                           
+        </div> 
+    </div>    
+</template>
